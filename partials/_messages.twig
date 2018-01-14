@@ -1,0 +1,30 @@
+{#
+ # Informational message blocks
+ #}
+{% block messages_debug %}
+    {% if debug %}
+        <p class="alert alert-warning" role="alert">[Debug] Notification debug mode enabled!</p>
+
+        {% if messages.debug and app.request.get(formname) %}
+            {% for debug in messages.debug %}
+                <p class="alert alert-warning" role="alert">[Debug] {{ debug|nl2br }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endif %}
+{% endblock %}
+
+{% block messages_error %}
+    {% if messages.error and app.request.get(formname) %}
+        {% for error in messages.error %}
+            <p class="alert alert-danger" role="alert">{{ error }}</p>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
+
+{% block messages_info %}
+    {% if messages.info and app.request.get(formname) %}
+        {% for info in messages.info %}
+            <p class="alert alert-success" role="alert">{{ info }}</p>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

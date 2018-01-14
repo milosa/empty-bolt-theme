@@ -1,0 +1,22 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="theme/bolt_empty_theme/css/app.css" >
+    <title>Empty theme</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+    {% block body %}
+    {{ include('partials/_header.twig') }}
+      {% block main %}
+      {% endblock main %}
+    {% endblock body %}
+    </main>
+{{ include("partials/_footer.twig") }}
+</body>
+</html>
